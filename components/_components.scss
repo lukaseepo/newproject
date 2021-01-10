@@ -77,7 +77,10 @@
                     margin-left: 35px;
                     position: relative;
                     overflow: hidden;
-                    height: 18px;
+                    height: 23px;
+                    font-family: 'Oswald', sans-serif;
+                    font-weight: 400;
+                    letter-spacing: 0.64px;
                     &:hover .line {
                         left: 0px;
                         transition: 0.5s;
@@ -323,6 +326,7 @@
                 h4 {
                     color: $white;
                     font-size: 18px;
+                    font-family: 'Oswald', sans-serif;
                     @media only screen and (max-width: 820px) {
                         text-align: center;
                     }
@@ -333,6 +337,7 @@
                     font-size: 60px;
                     letter-spacing: 2px;
                     padding-top: 25px;
+                    font-family: 'Oswald', sans-serif;
                     @media only screen and (max-width: 820px) {
                         text-align: center;
                     }
@@ -350,6 +355,7 @@
                     overflow: hidden;
                     z-index: 1;
                     margin-top: 25px;
+                    font-family: 'Oswald', sans-serif;
                     &:hover {
                         color: $black;
                     }
@@ -393,6 +399,7 @@
                 letter-spacing: 1.2px;
                 text-transform: uppercase;
                 padding-top: 20px;
+                font-family: 'Oswald', sans-serif;
                 @media only screen and (max-width: 820px) {
                     text-align: center;
                 }
@@ -404,6 +411,7 @@
                 text-transform: uppercase;
                 text-align: center;
                 padding-top: 15px;
+                font-family: 'Oswald', sans-serif;
             }
             p {
                 color: $grey;
@@ -436,30 +444,36 @@
                 align-items: center;
                 justify-content: center;
                 &:hover {
-                    animation: flip 1000ms both;
+                    animation: jello 1000ms both;
                     background-color: $red;
                     transition: 0.5s;
                 }
-                @keyframes flip {
-                    from {
-                        transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
-                        animation-timing-function: ease-out;
-                    }
-                    40% {
-                        transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
-                        animation-timing-function: ease-out;
-                    }
-                    50% {
-                        transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
-                        animation-timing-function: ease-in;
-                    }
-                    80% {
-                        transform: perspective(400px) scale3d(0.95, 0.95, 0.95);
-                        animation-timing-function: ease-in;
-                    }
+                @keyframes jello {
+                    from,
+                    11.1%,
                     to {
-                        transform: perspective(400px);
-                        animation-timing-function: ease-in;
+                        transform: translate3d(0, 0, 0);
+                    }
+                    22.2% {
+                        transform: skewX(-12.5deg) skewY(-12.5deg);
+                    }
+                    33.3% {
+                        transform: skewX(6.25deg) skewY(6.25deg);
+                    }
+                    44.4% {
+                        transform: skewX(-3.125deg) skewY(-3.125deg);
+                    }
+                    55.5% {
+                        transform: skewX(1.5625deg) skewY(1.5625deg);
+                    }
+                    66.6% {
+                        transform: skewX(-0.78125deg) skewY(-0.78125deg);
+                    }
+                    77.7% {
+                        transform: skewX(0.390625deg) skewY(0.390625deg);
+                    }
+                    88.8% {
+                        transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
                     }
                 }
                 i {
